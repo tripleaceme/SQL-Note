@@ -49,11 +49,11 @@ This statement adds a row to the corporation table with a value of 27 for the co
 Finally, here’s a simple select statement to retrieve the data that was just created:<br />
     `SELECT name`<br />
     `FROM corporation;`<br />
-    
-    |corp_id    | name                      |
-    |-----|---                        |
-    |1  | Acme Paper Corporation   |
-    |2  | Tony Marcus Media House    |
+
+|corp_id    | name                      |
+|-----|---                        |
+|1  | Acme Paper Corporation   |
+|2  | Tony Marcus Media House    |
 
 Along with querying your database, you will most likely be involved with populating and modifying the data in your database. <br />
 Here’s a simple example of how you would insert a new row into the product table:<br />
