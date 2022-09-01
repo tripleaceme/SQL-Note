@@ -1,6 +1,6 @@
 # SQL Note
 
-![NoSQL Databases](/Screenshot%202022-09-01%20at%2018.24.55.png"Query NoSQL Databases")
+<a href='https://drill.apache.org/'><img src="Screenshot%202022-09-01%20at%2018.24.55.png" alt="Query NoSQL Databases" /></a>
 
 - Since organizations frequently store data using multiple technologies, there is a need to unplug SQL from a particular database server and provide a service that can span multiple databases. For example, a report may need to bring together data stored in Oracle, Hadoop, JSON files, CSV files, and Unix log files. 
 
@@ -8,7 +8,7 @@
 
 
  My Note on SQL from beginner to Advance (MySQL)
-  - <bold> Bullet point texts are critical ! <bold>
+  -  **Bullet point texts are critical !**
 
 | Term  |  Definition |
 |---|---|
