@@ -39,7 +39,7 @@ This statement creates a table with two columns, corp_id and name, with the corp
 
 Next, here’s an SQL data statement that inserts a row into the corporation table for Acme Paper Corporation:<br />
     `INSERT INTO corporation (corp_id, name)`<br />
-    `VALUES (1, 'Acme Paper Corporation'),`
+    `VALUES (1, 'Omar Paper Corporation'),`<br/>
     `(2, 'Tony Marcus Media House');`<br />
 
 This statement adds a row to the corporation table with a value of 27 for the corp_id column and a value of Acme Paper Corporation for the name column.
@@ -52,7 +52,7 @@ Finally, here’s a simple select statement to retrieve the data that was just c
 
 |corp_id    | name                      |
 |-----|---                        |
-|1  | Acme Paper Corporation   |
+|1  | Omar Paper Corporation   |
 |2  | Tony Marcus Media House    |
 
 Along with querying your database, you will most likely be involved with populating and modifying the data in your database. <br />
