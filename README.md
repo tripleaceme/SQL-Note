@@ -7,7 +7,6 @@
 - A new generation of tools have been built to meet this type of challenge, and one of the most promising is <a href='https://drill.apache.org/'>Apache Drill</a>, which is an open source query engine that allows users to write queries that can access data stored in most any database or filesystem.
 
  My Note on SQL from beginner to Advance (MySQL)
-  -  **Bullet point texts are critical !**
 
 | Term  |  Definition |
 |---|---|
@@ -91,3 +90,80 @@ query a database for the first time.
 - Download the database used in the note<a href='https://dev.mysql.com/doc/index-other.html'> here</a>
 
 #### I hope that when you finish this note and worked through all of the examples, you will be well on your way to becoming a seasoned SQL practitioner.
+
+- For languages that use the Latin alphabet, such as English, there is a sufficiently small number of characters such that only a single byte is needed to store each character. Other languages, such as Japanese and Korean, contain large numbers of characters, thus requiring multiple bytes of storage for each character. Such character sets are therefore called multibyte character sets.
+
+# Data Types
+## Character Data
+Character data can be stored as either fixed-length or variable-length strings; the dif‐ ference is that fixed-length strings are right-padded with spaces and always consume the same number of bytes, and variable-length strings are not right-padded with spaces and don’t always consume the same number of bytes.
+
+`char(20)    /* fixed-length */`
+`varchar(20) /* variable-length */`
+
+- The maximum length for char columns is currently `255 bytes`, whereas varchar col‐ umns can be up to `65,535 bytes`. If you need to store longer strings (such as emails, XML documents, etc.), then you will want to use one of the text types `(mediumtext and longtext)`
+
+## Character sets
+For languages that use the Latin alphabet, such as English, there is a sufficiently small number of characters such that only a single byte is needed to store each character. Other languages, such as Japanese and Korean, contain large numbers of characters, thus requiring multiple bytes of storage for each character. Such character sets are therefore called multibyte character sets.
+
+To view the supported character sets in your server, you can use the show command, as shown in the following example:
+`SHOW CHARACTER SET;`
+
+- MySQL can store data using various character sets, both single- and multibyte. 
+- If the value in the fourth column, maxlen, is greater than 1, then the character set is a multibyte character set.
+
+## Text data
+If you need to store data that might exceed the 64 KB limit for varchar columns, you will need to use one of the text types.
+
+| Text type | Maximum number of bytes |
+|------------|------------|
+| tinytext | 255|
+| text | 65,535 |
+| mediumtext | 16,777,215 |
+| longtext  | 4,294,967,295 |
+
+When choosing to use one of the text types, you should be aware of the following:
+- If the data being loaded into a text column exceeds the maximum size for that type, the data will be truncated.
+- Trailing spaces will not be removed when data is loaded into the column.
+- When using text columns for sorting or grouping, only the first 1,024 bytes are used, although this limit may be increased if necessary.
+- The different text types are unique to MySQL. SQL Server has a single text type for large character data, whereas DB2 and Oracle use a data type called clob, for Character Large Object.
+- MySQL allows up to 65,535 bytes for varchar columns (it was limited to 255 bytes in version 4), there isn’t any particular need to use the tinytext or text type.
+
+`If you are creating a column for free-form data entry, such as a notes column to hold data about customer interactions with your company’s customer service department, then varchar will probably be adequate. If you are storing documents, however, you should choose either the mediumtext or longtext type.`
+
+## Numeric Data
+| Type | Signed range | Unsigned range| 
+| -------| --------| ------------| 
+| tinyint | −128 to 127 | 0to255| 
+| smallint | −32,768 to 32,767| 0 to 65,535  |
+| mediumint | −8,388,608 to 8,388,607 | 0 to 16,777,215| 
+| int | −2,147,483,648 to 2,147,483,647| 0 to 4,294,967,295  | 
+| bigint | −2^63 to 2^63 - 1| 0 to 2^64 - 1| 
+| float(p,s) | −3.402823466E+38 to −1.175494351E-38 | 1.175494351E-38 to 3.402823466E+38 |
+| double(p,s) | −1.7976931348623157E+308 to −2.2250738585072014E-308 | 2.2250738585072014E-308 to 1.7976931348623157E+308 |
+
+## Temporal Data
+Along with strings and numbers, you will almost certainly be working with informa‐ tion about dates and/or times. This type of data is referred to as temporal, and some examples of temporal data in a database include:
+- The future date that a particular event is expected to happen, such as shipping a customer’s order
+- The date that a customer’s order was shipped
+- The date and time that a user modified a particular row in a table
+- An employee’s birth date
+- The year corresponding to a row in a yearly_sales fact table in a data warehouse
+- The elapsed time needed to complete a wiring harness on an automobile assembly line
+
+| Type | Default format | Allowable values |
+|------|-------------|-------------|
+| date | YYYY-MM-DD | 1000-01-01 to 9999-12-31 |
+| datetime | YYYY-MM-DD HH:MI:SS | 1000-01-01 00:00:00.000000 to 9999-12-31 23:59:59.999999 |
+| timestamp | YYYY-MM-DD HH:MI:SS | 1970-01-01 00:00:00.000000 to 2038-01-18 22:14:07.999999  |
+| year | YYYY | 1901 to 2155 |
+|time | HHH:MI:SS | −838:59:59.000000 to 838:59:59.000000 |
+
+- The datetime, timestamp, and time types also allow fractional seconds of up to 6 decimal places (microseconds).
+
+
+
+ 
+
+
+
+
