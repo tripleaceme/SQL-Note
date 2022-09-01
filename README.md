@@ -4,8 +4,7 @@
 
 - Since organizations frequently store data using multiple technologies, there is a need to unplug SQL from a particular database server and provide a service that can span multiple databases. For example, a report may need to bring together data stored in Oracle, Hadoop, JSON files, CSV files, and Unix log files. 
 
-- A new generation of tools have been built to meet this type of challenge, and one of the most promising is <a href='https://drill.apache.org/'> Apache Drill</a>, which is an open source query engine that allows users to write queries that can access data stored in most any database or filesystem.
-
+- A new generation of tools have been built to meet this type of challenge, and one of the most promising is <a href='https://drill.apache.org/'>Apache Drill</a>, which is an open source query engine that allows users to write queries that can access data stored in most any database or filesystem.
 
  My Note on SQL from beginner to Advance (MySQL)
   -  **Bullet point texts are critical !**
@@ -86,3 +85,9 @@ query a database for the first time.
         - CREATE, ALTER, DROP, RENAME,TRUNCATE
     - SQL Data Statements: Deals with the data stored in the table of a database
         - SELECT, UPDATE, DELETE, TRUNCATE, INSERT, GRANT, REVOKE, COMMIT, ROLLBACK
+
+
+
+- Download the database used in the note<a href='https://dev.mysql.com/doc/index-other.html'> here</a>
+
+#### I hope that when you finish this note and worked through all of the examples, you will be well on your way to becoming a seasoned SQL practitioner.
