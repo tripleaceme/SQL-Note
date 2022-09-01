@@ -6,7 +6,7 @@
 
 - A new generation of tools have been built to meet this type of challenge, and one of the most promising is <a href='https://drill.apache.org/'>Apache Drill</a>, which is an open source query engine that allows users to write queries that can access data stored in most any database or filesystem.
 
- My Note on SQL from beginner to Advance (MySQL)
+ However, this is my Note on SQL (Relational Databases) from beginner to Advance (MySQL)
 
 | Term  |  Definition |
 |---|---|
@@ -171,7 +171,7 @@ Along with strings and numbers, you will almost certainly be working with inform
 | MI | Minute | 00 to 59 |
 | SS | Second | 00 to 59 |
 
- 
+
 Here’s how the various temporal types would be used to implement the examples shown earlier:
 - Columns to hold the expected future shipping date of a customer order and an employee’s birth date would use the date type, since it is unrealistic to schedule a future shipment down to the second and unnecessary to know at what time a person was born.
 - A column to hold information about when a customer order was actually shipped would use the datetime type, since it is important to track not only the date that the shipment occurred but the time as well.
@@ -179,5 +179,28 @@ Here’s how the various temporal types would be used to implement the examples 
 - A column holding just year data would use the year type.
 - Columns that hold data regarding the length of time needed to complete a task would use the time type. For this type of data, it would be unnecessary and con‐ fusing to store a date component, since you are interested only in the number of hours/minutes/seconds needed to complete the task. This information could be derived using two datetime columns (one for the task start date/time and the other for the task completion date/time) and subtracting one from the other, but it is simpler to use a single time column.
 
+# Exercise 1
+### Creating a Table
+Now that you have a firm grasp on what data types may be stored in a MySQL database, start by defining a table to hold information about a person.
+`A good way to start designing a table is to do a bit of brainstorming to see what kind of information would be helpful to include.`
 
+<details> <summary> Solution </summary>
+<p>
 
+Here is the statement to create the person table:<br />
+    `CREATE TABLE person`<br />
+     `(person_id SMALLINT UNSIGNED,`<br />
+      `fname VARCHAR(20),`<br />
+      `lname VARCHAR(20),`<br />
+      `age SMALLINT UNSIGNED,`<br />
+      `eye_color CHAR(2),`<br />
+      `birth_date DATE,`<br />
+      `street VARCHAR(30),`<br />
+      `city VARCHAR(20),`<br />
+      `state VARCHAR(20),`<br />
+      `phone_number CHAR(11),`<br />
+      `country VARCHAR(20),`<br />
+      `postal_code VARCHAR(20),`<br />
+      `CONSTRAINT pk_person PRIMARY KEY (person_id));`
+</p>
+</details>
