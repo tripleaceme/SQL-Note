@@ -2,6 +2,11 @@
 
 ![NoSQL Databases](/Screenshot%202022-09-01%20at%2018.24.55.png"Query NoSQL Databases")
 
+- Since organizations frequently store data using multiple technologies, there is a need to unplug SQL from a particular database server and provide a service that can span multiple databases. For example, a report may need to bring together data stored in Oracle, Hadoop, JSON files, CSV files, and Unix log files. 
+
+- A new generation of tools have been built to meet this type of challenge, and one of the most promising is <a href='https://drill.apache.org/'> Apache Drill</a>, which is an open source query engine that allows users to write queries that can access data stored in most any database or filesystem.
+
+
  My Note on SQL from beginner to Advance (MySQL)
   - <bold> Bullet point texts are critical ! <bold>
 
@@ -72,7 +77,7 @@ query a database for the first time.
 - Most SQL implementations treat any text between the /* and */ tags as comments.
 - Whenever you execute an SQL data statement, you will receive feedback from the database engine as to how many rows were affected by your statement.
 - It’s a good idea to check this info to make sure your state‐ ment didn’t do something unexpected (like when you forget to put a where clause on your delete statement and delete every row in the table!).
-- Two of the most commonly used open source database servers are Post‐ greSQL and MySQL. The MySQL server is available for <a href=''> free</a>, and I have found it to be extremely simple to download and install.
+- Two of the most commonly used open source database servers are Post‐ greSQL and MySQL. The MySQL server is available for <a href='https://dev.mysql.com/downloads/'> free</a>, and I have found it to be extremely simple to download and install.
 - Even if you are already using another server and never plan to use MySQL, I urge you to install the latest MySQL server, load the sample schema and data, and experiment with the data and examples in this note.
 
 # SQL STATEMENTS 
