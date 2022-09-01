@@ -1,5 +1,5 @@
 # SQL Note
- My reading note for beginner to Advance SQL
+ My Note on SQL from beginner to Advance (MySQL)
 
 | Term  |  Definition |
 |---|---|
@@ -14,18 +14,18 @@
 # SQL OPERATION IN 4 STEPS
 
 ## Step 1: Create a database
-To create a new database, you would use the SQL schema statement create database database_name and set it as a default database to work with.
-CREATE DATABASE COMPANY_DATA;<br />
-USE COMPANY_DATA;<br />
+To create a new database, you would use the SQL schema statement create database database_name and set it as a default database to work with.<br />
+`CREATE DATABASE COMPANY_DATA;`<br />
+`USE COMPANY_DATA;`<br />
 
 Likewise, to create a new table in your database, you would use the SQL schema statement create table, whereas the process of populating your new table with data would require the SQL data statement insert.
 
 ## Step 2: Create a table
-Here’s an SQL schema statement that creates a table called corporation:
-    CREATE TABLE corporation<br/>
-     (corp_id SMALLINT,<br />
-      name VARCHAR(30),<br />
-      CONSTRAINT pk_corporation PRIMARY KEY (corp_id)<br />
+Here’s an SQL schema statement that creates a table called corporation:<br />
+    `CREATE TABLE corporation`<br/>
+     `(corp_id SMALLINT,`<br />
+      `name VARCHAR(30)`,<br />
+      `CONSTRAINT pk_corporation PRIMARY KEY (corp_id)`<br />
      ); <br />
 The reason for `pk_corporation` is for deletion purpose of the primary key constraint on the corp_id column.
 <br>
@@ -33,8 +33,8 @@ This statement creates a table with two columns, corp_id and name, with the corp
 
 ## Step 3: Insert data into the table
 Next, here’s an SQL data statement that inserts a row into the corporation table for Acme Paper Corporation:<br />
-    INSERT INTO corporation (corp_id, name)<br />
-    VALUES (27, 'Acme Paper Corporation');<br />
+    `INSERT INTO corporation (corp_id, name)`<br />
+    `VALUES (27, 'Acme Paper Corporation');`<br />
 
 This statement adds a row to the corporation table with a value of 27 for the corp_id column and a value of Acme Paper Corporation for the name column.
 
@@ -43,8 +43,6 @@ Finally, here’s a simple select statement to retrieve the data that was just c
     SELECT name<br />
     FROM corporation<br />
     WHERE corp_id = 27;<br />
-    +------------------------+
     | name                   |
-    +------------------------+
+    |------------------------|
     | Acme Paper Corporation |
-    +------------------------+
