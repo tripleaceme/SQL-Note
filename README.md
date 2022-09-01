@@ -160,10 +160,24 @@ Along with strings and numbers, you will almost certainly be working with inform
 
 - The datetime, timestamp, and time types also allow fractional seconds of up to 6 decimal places (microseconds).
 
-
+### Date format components
+|Component | Definition | Range |
+|------|----------|------|
+| YYYY |Year, including century |1000 to 9999 |
+| MM | Month | 01(January) to 12(December) |
+| DD | Day | 01 to 31|
+| HH | Hour | 00 to 23|
+| HHH | Hours (elapsed) | −838 to 838 |
+| MI | Minute | 00 to 59 |
+| SS | Second | 00 to 59 |
 
  
-
+Here’s how the various temporal types would be used to implement the examples shown earlier:
+- Columns to hold the expected future shipping date of a customer order and an employee’s birth date would use the date type, since it is unrealistic to schedule a future shipment down to the second and unnecessary to know at what time a person was born.
+- A column to hold information about when a customer order was actually shipped would use the datetime type, since it is important to track not only the date that the shipment occurred but the time as well.
+- A column that tracks when a user last modified a particular row in a table would use the timestamp type. The timestamp type holds the same information as the datetime type (year, month, day, hour, minute, second), but a timestamp column will automatically be populated with the current date/time by the MySQL server when a row is added to a table or when a row is later modified.
+- A column holding just year data would use the year type.
+- Columns that hold data regarding the length of time needed to complete a task would use the time type. For this type of data, it would be unnecessary and con‐ fusing to store a date component, since you are interested only in the number of hours/minutes/seconds needed to complete the task. This information could be derived using two datetime columns (one for the task start date/time and the other for the task completion date/time) and subtracting one from the other, but it is simpler to use a single time column.
 
 
 
