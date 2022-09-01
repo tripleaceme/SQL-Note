@@ -1,5 +1,7 @@
 # SQL Note
+
  My Note on SQL from beginner to Advance (MySQL)
+  - <bold> Bullet point texts are critical ! <bold>
 
 | Term  |  Definition |
 |---|---|
@@ -14,6 +16,7 @@
 # SQL OPERATION IN 4 STEPS
 
 ## Step 1: Create a database
+
 To create a new database, you would use the SQL schema statement create database database_name and set it as a default database to work with.<br />
 `CREATE DATABASE COMPANY_DATA;`<br />
 `USE COMPANY_DATA;`<br />
@@ -21,6 +24,7 @@ To create a new database, you would use the SQL schema statement create database
 Likewise, to create a new table in your database, you would use the SQL schema statement create table, whereas the process of populating your new table with data would require the SQL data statement insert.
 
 ## Step 2: Create a table
+
 Here’s an SQL schema statement that creates a table called corporation:<br />
     `CREATE TABLE corporation`<br/>
      `(corp_id SMALLINT,`<br />
@@ -32,17 +36,42 @@ The reason for `pk_corporation` is for deletion purpose of the primary key const
 This statement creates a table with two columns, corp_id and name, with the corp_id column identified as the primary key for the table.
 
 ## Step 3: Insert data into the table
+
 Next, here’s an SQL data statement that inserts a row into the corporation table for Acme Paper Corporation:<br />
     `INSERT INTO corporation (corp_id, name)`<br />
     `VALUES (27, 'Acme Paper Corporation');`<br />
 
 This statement adds a row to the corporation table with a value of 27 for the corp_id column and a value of Acme Paper Corporation for the name column.
 
-## Step 4: Query the table and print out the results.
+## Step 4: Query the table and print out the results
+
 Finally, here’s a simple select statement to retrieve the data that was just created:<br />
-    SELECT name<br />
-    FROM corporation<br />
-    WHERE corp_id = 27;<br />
+    `SELECT name`<br />
+    `FROM corporation`<br />
+    `WHERE corp_id = 27;`<br />
     | name  |
     |---|
     | Acme Paper Corporation   |
+
+Along with querying your database, you will most likely be involved with populating and modifying the data in your database. <br />
+Here’s a simple example of how you would insert a new row into the product table:<br />
+    `INSERT INTO corporation (corp_id, name)`<br />
+    `VALUES (22, 'WayBoll Paper Corporation');`<br />  
+
+Whoops, looks like you misspelled WayBill.” No problem. You can clean that up with an update statement:<br />
+    `UPDATE product`<br />
+    `SET name = 'WayBill Paper Corporation'`<br />
+    `WHERE corp_id = 22;`<br />
+
+- Data Dictionary are also generated for every SQL schema statements. Data dictionary is also known as Metadata and comes handy when you want to
+query a database for the first time.
+- Most SQL implementations treat any text between the /* and */ tags as comments.
+- Whenever you execute an SQL data statement, you will receive feedback from the database engine as to how many rows were affected by your statement.
+- It’s a good idea to check this info to make sure your state‐ ment didn’t do something unexpected (like when you forget to put a where clause on your delete statement and delete every row in the table!).
+
+# SQL STATEMENTS 
+- It's divided into 2, namely
+    - SQL Schema Statements: Deals with structure of the database
+        - CREATE, ALTER, DROP, RENAME,TRUNCATE
+    - SQL Data Statements: Deals with the data stored in the table of a database
+        - SELECT, UPDATE, DELETE, TRUNCATE, INSERT, GRANT, REVOKE, COMMIT, ROLLBACK
