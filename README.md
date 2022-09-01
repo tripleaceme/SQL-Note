@@ -43,6 +43,6 @@ Finally, here’s a simple select statement to retrieve the data that was just c
     SELECT name<br />
     FROM corporation<br />
     WHERE corp_id = 27;<br />
-    | name                   |
-    |------------------------|
-    | Acme Paper Corporation |
+    | name  |
+    |---|
+    | Acme Paper Corporation   |
