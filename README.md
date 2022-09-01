@@ -29,8 +29,8 @@ Here’s an SQL schema statement that creates a table called corporation:<br />
     `CREATE TABLE corporation`<br/>
      `(corp_id SMALLINT,`<br />
       `name VARCHAR(30)`,<br />
-      `CONSTRAINT pk_corporation PRIMARY KEY (corp_id)`<br />
-     ); <br />
+      `CONSTRAINT pk_corporation PRIMARY KEY (corp_id));`<br />
+
 The reason for `pk_corporation` is for deletion purpose of the primary key constraint on the corp_id column.
 <br>
 This statement creates a table with two columns, corp_id and name, with the corp_id column identified as the primary key for the table.
@@ -39,7 +39,8 @@ This statement creates a table with two columns, corp_id and name, with the corp
 
 Next, here’s an SQL data statement that inserts a row into the corporation table for Acme Paper Corporation:<br />
     `INSERT INTO corporation (corp_id, name)`<br />
-    `VALUES (27, 'Acme Paper Corporation');`<br />
+    `VALUES (1, 'Acme Paper Corporation'),`
+    `(2, 'Tony Marcus Media House');`<br />
 
 This statement adds a row to the corporation table with a value of 27 for the corp_id column and a value of Acme Paper Corporation for the name column.
 
@@ -47,21 +48,22 @@ This statement adds a row to the corporation table with a value of 27 for the co
 
 Finally, here’s a simple select statement to retrieve the data that was just created:<br />
     `SELECT name`<br />
-    `FROM corporation`<br />
-    `WHERE corp_id = 27;`<br />
-    | name                      |
-    |---                        |
-    | Acme Paper Corporation   |
+    `FROM corporation;`<br />
+    
+    |corp_id    | name                      |
+    |-----|---                        |
+    |1  | Acme Paper Corporation   |
+    |2  | Tony Marcus Media House    |
 
 Along with querying your database, you will most likely be involved with populating and modifying the data in your database. <br />
 Here’s a simple example of how you would insert a new row into the product table:<br />
     `INSERT INTO corporation (corp_id, name)`<br />
-    `VALUES (22, 'WayBoll Paper Corporation');`<br />  
+    `VALUES (3, 'WayBoll Paper Corporation');`<br />  
 
 Whoops, looks like you misspelled WayBill.” No problem. You can clean that up with an update statement:<br />
     `UPDATE product`<br />
     `SET name = 'WayBill Paper Corporation'`<br />
-    `WHERE corp_id = 22;`<br />
+    `WHERE corp_id = 3;`<br />
 
 - Data Dictionary are also generated for every SQL schema statements. Data dictionary is also known as Metadata and comes handy when you want to
 query a database for the first time.
