@@ -49,8 +49,8 @@ Finally, here’s a simple select statement to retrieve the data that was just c
     `SELECT name`<br />
     `FROM corporation`<br />
     `WHERE corp_id = 27;`<br />
-    | name  |
-    |---|
+    | name                      |
+    |---                        |
     | Acme Paper Corporation   |
 
 Along with querying your database, you will most likely be involved with populating and modifying the data in your database. <br />
