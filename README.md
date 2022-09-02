@@ -9,6 +9,11 @@
 
  However, this is my Note on SQL (Relational Databases) from beginner to Advance (MySQL)
 
+
+- ## Download the database used in the note<a href='https://dev.mysql.com/doc/index-other.html'> here</a>
+
+#### I hope that when you finish this note and worked through all of the examples, you will be well on your way to becoming a seasoned SQL practitioner.
+
 | Term  |  Definition |
 |---|---|
 | Entity  | Something of interest to the database user community. Examples include customers, parts, geographic locations, etc.  |
@@ -85,12 +90,6 @@ query a database for the first time.
         - CREATE, ALTER, DROP, RENAME,TRUNCATE
     - SQL Data Statements: Deals with the data stored in the table of a database
         - SELECT, UPDATE, DELETE AND INSERT
-
-
-
-- Download the database used in the note<a href='https://dev.mysql.com/doc/index-other.html'> here</a>
-
-#### I hope that when you finish this note and worked through all of the examples, you will be well on your way to becoming a seasoned SQL practitioner.
 
 - For languages that use the Latin alphabet, such as English, there is a sufficiently small number of characters such that only a single byte is needed to store each character. Other languages, such as Japanese and Korean, contain large numbers of characters, thus requiring multiple bytes of storage for each character. Such character sets are therefore called multibyte character sets.
 
