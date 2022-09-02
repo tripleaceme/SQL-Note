@@ -301,3 +301,20 @@ I hope the first part of the note has prepared your mind for the beautiful world
 # PART 2
 
 For this part of the note, the queries will be exploring the Sakila database we downloaded at the beginning of the note. Ensure to download it and load it into your RDBMS.
+
+## Sakila schema definitions
+
+|Table name| Definition|
+|---------|----------|
+| film | A movie that has been released and can be rented |
+| actor |  A person who acts in films |
+| customer | A person who watches films |
+| category | A genre of films |
+| payment | A rental of a film by a customer | 
+| language | A language spoken by the actors of a film |
+| film_actor | An actor in a film |
+| inventory | A film available for rental |
+
+- If you want to see the tables available in your database, you can use the show tables command, as in: <br />
+
+  `show tables;`
