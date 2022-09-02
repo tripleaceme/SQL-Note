@@ -7,10 +7,10 @@
 
 - A new generation of tools have been built to meet this type of challenge, and one of the most promising is <a href='https://drill.apache.org/'>Apache Drill</a>, which is an open source query engine that allows users to write queries that can access data stored in most any database or filesystem.
 
- However, this is my Note on SQL (Relational Databases) from beginner to Advance (MySQL)
+# However, this is my Note on SQL (Relational Databases) from beginner to Advance (MySQL)
 
 
-- ## Download the database used in the note<a href='https://dev.mysql.com/doc/index-other.html'> here</a>
+## Download the database used in the note<a href='https://dev.mysql.com/doc/index-other.html'> here</a>
 
 #### I hope that when you finish this note and worked through all of the examples, you will be well on your way to becoming a seasoned SQL practitioner.
 
