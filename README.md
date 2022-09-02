@@ -266,7 +266,8 @@ It seems that Sean and Susan aren’t getting along very well together, so one o
 - Nonunique Primary Key
 - Nonexistent Foreign Key
 - Column Value Violations
-- Invalid Data Type Insetion e.g `'DEC-21-1980' instead of '1980-12-21'` | Can be rectified using `str_to_date('DEC-21-1980' , '%b-%d-%Y')`
+- Invalid Data Type Insetion e.g `'DEC-21-1980' instead of '1980-12-21'`. It can be rectified using `str_to_date('DEC-21-1980' , '%b-%d-%Y')`
+- Unmatching Column arrangement during data population.
 
 <details> <summary>  A few more formatters that you might need when converting strings to datetimes in MySQL: </summary>
 <p>
@@ -293,8 +294,7 @@ It seems that Sean and Susan aren’t getting along very well together, so one o
 
 I hope the first part of the note has prepared your mind for the beautiful world of SQL. However, every single thing implemented in the first part of the note can be implemented in any flavor of SQL with little to no changes.
 
-Once you're comfortable with one RDBMS, the others comes easy. It's just like using an iPhone after long years of using Androids or using MacBook after
-long usage of Dell Laptop or Lenovo.
+#### Once you're comfortable with one RDBMS, the others comes easy. It's just like using an iPhone after long years of using Androids or using MacBook after long usage of Dell Laptop or Lenovo.
 
 # THANK YOU
 
