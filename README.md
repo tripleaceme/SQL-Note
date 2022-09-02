@@ -1,5 +1,6 @@
-# SQL Note
+## SQL Note
 
+# PART 1
 <a href='https://drill.apache.org/'><img src="Screenshot%202022-09-01%20at%2018.24.55.png" alt="Query NoSQL Databases" /></a>
 
 - Since organizations frequently store data using multiple technologies, there is a need to unplug SQL from a particular database server and provide a service that can span multiple databases. For example, a report may need to bring together data stored in Oracle, Hadoop, JSON files, CSV files, and Unix log files. 
@@ -83,7 +84,7 @@ query a database for the first time.
     - SQL Schema Statements: Deals with structure of the database
         - CREATE, ALTER, DROP, RENAME,TRUNCATE
     - SQL Data Statements: Deals with the data stored in the table of a database
-        - SELECT, UPDATE, DELETE, TRUNCATE, INSERT, GRANT, REVOKE, COMMIT, ROLLBACK
+        - SELECT, UPDATE, DELETE AND INSERT
 
 
 
@@ -193,7 +194,7 @@ Here is the statement to create the person table:<br />
       `fname VARCHAR(20),`<br />
       `lname VARCHAR(20),`<br />
       `age SMALLINT UNSIGNED,`<br />
-      `eye_color CHAR(2),`<br />
+      `eye_color CHAR(2) CHECK (eye_color IN ('BR','BL','GR')),`<br /> #ensure that `eye_color` value is either `'GR'` or `'BL'` or `'GR'`
       `birth_date DATE,`<br />
       `street VARCHAR(30),`<br />
       `city VARCHAR(20),`<br />
@@ -201,6 +202,103 @@ Here is the statement to create the person table:<br />
       `phone_number CHAR(11),`<br />
       `country VARCHAR(20),`<br />
       `postal_code VARCHAR(20),`<br />
-      `CONSTRAINT pk_person PRIMARY KEY (person_id));`
+      `CONSTRAINT pk_person PRIMARY KEY (person_id) AUTO_INCREMENT ); # Unique identifier for the person`<br />
+
+Another way to declare the eye_color column would be `eye_color ENUM('BR','BL','GR')`. <br />
+
+Run the following command to see the person table structure:<br />
+`Describe person`;<br />
+
+#### Quick Explanation
+- Columns 1 and 2 of the describe output are self-explanatory. 
+- Column 3 shows whether a particular column can be omitted when data is inserted into the table. 
+- The fourth column shows whether a column takes part in any keys (primary or foreign); in this case, the person_id column is marked as the primary key.
+- Column 5 shows whether a particular column will be populated with a default value if you omit the column when inserting data into the table. 
+- The sixth column (called “Extra”) shows any other pertinent infor‐ mation that might apply to a column.
 </p>
 </details>
+
+# Populating the table
+
+With the person table in place, you can now begin to explore the four SQL data statements mentioned earlier: `insert, update, delete, and select.`<br />
+- Insert data into the table you've created.
+
+<details> <summary> Solution </summary>
+<p>
+
+`INSERT INTO person:`<br />
+        `VALUES (1, 'Sean','Turner',42, 'BR', '1972-05-27', '10 Marcre Str., Mishin','Lagos','234812019102', 'Nigeria','100121'),`
+        `(2, 'Susan','Smith', 32,'BL', '1975-11-02','23 Maple St., Arlington', 'VA', 'USA', '20220');`<br />
+
+</p>
+</details>
+
+# Updating Data
+When the data for William Turner was initially added to the table, data for the various address columns was not included in the insert statement. 
+- Update one of the information you inserted into the table to reflect changes in the data.
+
+<details> <summary> Solution </summary>
+<p>
+
+`UPDATE person`<br />
+    `SET street = '1225 Tremont St.',`<br />
+    `city = 'Boston',`<br />
+    `state = 'MA',`<br />
+    `country = 'USA',`<br />
+    `postal_code = '02138'`<br />
+    `WHERE person_id = 1;`<br />
+</p>
+</details>
+
+# Deleting Data
+It seems that Sean and Susan aren’t getting along very well together, so one of them has got to go.  I will delete one person at random, so Sean get the booted out by delete statement.
+-  Delete one of the information you inserted into the table to reflect changes in the data.
+
+<details> <summary> Solution </summary>
+<p>
+
+`DELETE FROM person`<br />
+        `WHERE person_id = 1;`
+</p>
+</details>
+
+# Bad Practices To Avoid
+- Nonunique Primary Key
+- Nonexistent Foreign Key
+- Column Value Violations
+- Invalid Data Type Insetion e.g `'DEC-21-1980' instead of '1980-12-21'` | Can be rectified using `str_to_date('DEC-21-1980' , '%b-%d-%Y')`
+
+<details> <summary>  A few more formatters that you might need when converting strings to datetimes in MySQL: </summary>
+<p>
+
+- %a The short weekday name, such as Sun, Mon, ...
+- %b The short month name, such as Jan, Feb, ...
+- %c The numeric month (0..12)
+- %d The numeric day of the month (00..31)
+- %f The number of microseconds (000000..999999)
+- %H The hour of the day, in 24-hour format (00..23)
+- %h The hour of the day, in 12-hour format (01..12)
+- %i The minutes within the hour (00..59)
+- %j The day of year (001..366)
+- %M The full month name (January..December)
+- %m The numeric month
+- %p AM or PM
+- %s The number of seconds (00..59)
+- %W The full weekday name (Sunday..Saturday)
+- %w The numeric day of the week (0=Sunday..6=Saturday)
+- %Y The four-digit year
+
+</p>
+</details>
+
+I hope the first part of the note has prepared your mind for the beautiful world of SQL. However, every single thing implemented in the first part of the note can be implemented in any flavor of SQL with little to no changes.
+
+Once you're comfortable with one RDBMS, the others comes easy. It's just like using an iPhone after long years of using Androids or using MacBook after
+long usage of Dell Laptop or Lenovo.
+
+# THANK YOU
+
+
+# PART 2
+
+For this part of the note, the queries will be exploring the Sakila database we downloaded at the beginning of the note. Ensure to download it and load it into your RDBMS.
